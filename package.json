@@ -1,0 +1,20 @@
+{
+  "author": "Jonathan Blanchet <contact@jblanche.fr> (http://jblanche.fr)",
+  "name": "bower-server",
+  "description": "Node port of the bower server",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "~3.0.5",
+    "pg": "~6.1.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "~3.27.0"
+  },
+  "devDependencies": {
+    "chai": "~1.4.2",
+    "mocha": "~1.7.4"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "0.10.13"
+  }
+}
