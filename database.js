@@ -1,8 +1,9 @@
 var Sequelize = require("sequelize");
 var _ = Sequelize.Utils._ ;
-
+console.log('in database.js');
 var Database = {
     init: function () {
+        console.log('in database.js init()');
         var match = process.env.HEROKU_POSTGRESQL_RED_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/);
 
         var options = {
@@ -18,7 +19,7 @@ var Database = {
         console.log('Connection:', process.env.HEROKU_POSTGRESQL_RED_URL, match);
 
         this.sequelize = new Sequelize(match[5], match[1], match[2], options);
-  
+        console.log('this.sequelize'+this.sequelize+' '+'options '+options);
         this.Package = this.sequelize.define('Package',
           {
             name: {
