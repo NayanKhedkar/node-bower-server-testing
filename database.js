@@ -4,7 +4,7 @@ console.log('in database.js');
 var Database = {
     init: function () {
         console.log('in database.js init()');
-        var match = process.env.HEROKU_POSTGRESQL_RED_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/);
+        var match = process.env.DATABASE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/);
 
         var options = {
           dialect:  'postgres',
