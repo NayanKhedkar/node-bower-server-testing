@@ -1,14 +1,13 @@
 var express = require('express');
 var util = require("util");
-console.log('in webserver.js');
 var WebServer = {
     init: function () {
-        console.log('in webserver.js init()');
+   
         this.app = express();
         this.app.use(express.bodyParser());
 
         this.app.get('/packages', function(req, res){
-             console.log('in webserver.js get request');
+      
             this.pkg.findAll({order: 'name DESC'}).then(function(packages) {
                 res.send(packages);
             });
@@ -19,7 +18,6 @@ var WebServer = {
           name = req.param('name');
           url = req.param('url');
           pkg = this.pkg.build({name: name, url: url});
-          console.log('in webserver.js post request');
           pkg.validate().then(function(errors){
               if(!errors){
                 pkg.save().then(function () {
