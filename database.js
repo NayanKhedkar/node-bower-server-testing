@@ -1,9 +1,7 @@
 var Sequelize = require("sequelize");
 var _ = Sequelize.Utils._ ;
-console.log('in database.js');
 var Database = {
     init: function () {
-        console.log('in database.js init()');
         var match = process.env.DATABASE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/);
 
         var options = {
