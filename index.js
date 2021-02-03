@@ -1,5 +1,6 @@
 var database = require('./database').init();
 var webserver = require('./webserver').init();
+
 var sync = database.Package.sync().then( function () {
     return database.onSync.bind(database);
 }).then(function () {
